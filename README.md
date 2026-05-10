@@ -13,19 +13,20 @@ Help a user answer:
 
 ## MVP
 
-- Paste or upload source text
-- Generate a concise summary
-- Extract decisions, action items, and open questions
-- Save entries by project
-- Search prior entries
-- Show a simple current-state dashboard
+- Paste source text.
+- Generate a concise mock extraction.
+- Extract decisions, action items, and open questions.
+- Save entries by project using a local JSON-backed API.
+- Review saved entries from the dashboard.
+- Run as a web app or packaged Electron desktop app.
 
 ## Stack
 
 - Next.js
 - TypeScript
-- Tailwind CSS
 - App Router
+- Electron
+- Local file-backed persistence
 
 ## Project Structure
 
@@ -37,15 +38,38 @@ Help a user answer:
 ## Getting Started
 
 ```powershell
+cd C:\dev\Repos\context-window
 npm install
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Desktop Build
+
+```powershell
+cd C:\dev\Repos\context-window
+npm run desktop:build
+```
+
+The packaged output is generated under `release/`, which is intentionally ignored by Git.
+
+## Verification
+
+```powershell
+npm run lint
+npm run build
+```
+
 ## Next Steps
 
-1. Add a landing page layout that matches the product direction.
-2. Define the core data model for sources, summaries, decisions, and action items.
-3. Choose the first persistence layer.
-4. Add ingestion and extraction flows.
+1. Replace mock extraction with a local or API-backed summarization engine.
+2. Add project filters and full-text search.
+3. Add import/export for saved context.
+4. Add backup and sync options for the local data file.
+
+## Portfolio Notes
+
+- Shows product thinking around operational memory and project continuity.
+- Demonstrates Next.js App Router, local persistence, and Electron packaging.
+- Useful as a bridge between infrastructure notes, coding context, and reusable decision history.
